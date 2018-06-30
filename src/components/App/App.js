@@ -4,6 +4,7 @@ import './App.css';
 import Header from '../Header/Header';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Feelings from '../FeelingPage1/FeelingPage';
+import Comprehension from '../ComprehensionPage2/ComprehensionPage';
 
 class App extends Component {
   render() {

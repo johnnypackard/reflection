@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
-const FeedbackInput = (props) => {
-    <input type={props.type} value={props.value} onChange={props.handleChange} />
+const mapReduxToProps = (reduxStore) => ({
+    reduxStore
+})
+class FeedbackInput extends Component {
+    render() {
+        return (
+            <input type={this.props.type} value={this.props.value} onChange={this.props.handleChange} />
+        );
+    }
 }
 
-export default FeedbackInput;
+export default connect(mapReduxToProps)(FeedbackInput);
