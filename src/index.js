@@ -3,35 +3,45 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
+import axios from 'axios';
 
 // redux
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import logger from 'react-logger';
+import logger from 'redux-logger';
 
-class Feedback{
-    constructor(feeling, comprehension, support, comments){
-        this.feeling = feeling,
-        this.comprehension = comprehension,
-        this.support = support,
-        this.comments = comments
-    }
+const postFeedback = (feedback) => {
+    axios.post('/api/feedback', feedback)
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            alert(`There's a problem with your post`);
+        })
 }
 
-const feedbackReducer = (state = {allFeedback: [], selected: []}, action) => {
-    if(action.type === 'ADD_FEEDBACK'){
-        return new Feedback(action.payload.feeling, action.payload.comprehension,
-            action.payload.support, action.payload.comments);
+const feedback = (state = {}, action) => {
+    if (action.type === 'FEELINGS_SUBMIT') {
+        state.feelings = action.payload;
+    } else if (action.type === 'COMPREHENSION_SUBMIT') {
+        state.comprehension = action.payload;
+    } else if (action.type === 'SUPPORT_SUBMIT') {
+        state.support = action.payload;
+    } else if (action.type === 'COMMENTS_SUBMIT_SEND') {
+        state.comments = action.payload;
+        postFeedback(state);
+        state = {};
     }
-    else if (action.type === 'DELETE_FEEDBACK') {
-        const feedbackToRemove = feedback = feedback._id !== action.payload;
-        return {...state, selected: state.selected.filter(feedbackToRemove)};
-    }
-    else if (action.type === 'SHOW_ALL'){
-        return  {...state, allFeedback: [...action.payload]}
-    }
-    return state;
+    return state = {};
 }
+
+const store = createStore(
+    combineReducers({
+        feedback
+    }),
+    applyMiddleware(logger),
+)
+    
 // end feedbackReducer
 
 
