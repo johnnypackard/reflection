@@ -25,7 +25,7 @@ class Comprehension extends Component {
             <div>
                 <h3>How well are you understanding the content?</h3>
                 <FeedbackInput value={this.state.comprehension} handleChange={this.handleChange} type="number" />
-                <SubmitAndNextButton history={this.props.history} actionType="COMPREHENSION_SUBMIT" value={this.state.comprehension} />
+                <SubmitAndNextButton history={this.props.history} actionType="COMPREHENSION_SUBMIT" value={this.state.comprehension} path="/support" />
             </div>
         )
     }

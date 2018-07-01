@@ -25,7 +25,7 @@ class Comments extends Component {
             <div>
                 <h3>Any comments you would like to leave?</h3>
                 <FeedbackInput value={this.state.comments} handleChange={this.handleChange} type="text" />
-                <SubmitAndFinishButton history={this.props.history} actionType="COMMENTS_SUBMIT_SEND" value={this.state.comments} />
+                <SubmitAndFinishButton history={this.props.history} actionType="COMMENTS_SUBMIT_SEND" value={this.state.comments} path="/thankyou" />
             </div>
         )
     }

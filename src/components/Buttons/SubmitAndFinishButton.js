@@ -8,7 +8,7 @@ class SubmitAndFinishButton extends Component {
             payload: this.props.value
         }
         this.props.dispatch(action);
-        this.props.history.push('/thanks');
+        this.props.history.push(this.props.path);
     }
 
     render() {

@@ -25,7 +25,7 @@ class Support extends Component {
             <div>
                 <h3>How well are you being supported?</h3>
                 <FeedbackInput value={this.state.support} handleChange={this.handleChange} type="number" />
-                <SubmitAndNextButton history={this.props.history} actionType="SUPPORT_SUBMIT" value={this.state.support} />
+                <SubmitAndNextButton history={this.props.history} actionType="SUPPORT_SUBMIT" value={this.state.support} path="/comments" />
             </div>
         )
     }

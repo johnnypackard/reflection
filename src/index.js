@@ -3,22 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
-import axios from 'axios';
 
-// redux
+// redux & axios
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
+import axios from 'axios';
 import logger from 'redux-logger';
-
-const postFeedback = (feedback) => {
-    axios.post('/api/feedback', feedback)
-        .then((response) => {
-            console.log(response);
-        })
-        .catch((error) => {
-            alert(`There's a problem with your post`);
-        })
-}
 
 const feedback = (state = {}, action) => {
     if (action.type === 'FEELINGS_SUBMIT') {
@@ -32,7 +22,7 @@ const feedback = (state = {}, action) => {
         postFeedback(state);
         state = {};
     }
-    return state = {};
+    return state;
 }
 
 const store = createStore(
@@ -41,8 +31,16 @@ const store = createStore(
     }),
     applyMiddleware(logger),
 )
-    
-// end feedbackReducer
+
+const postFeedback = (feedback) => {
+    axios.post('/api/feedback', feedback)
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            alert(`There's a problem with your post`);
+        })
+}
 
 
 
