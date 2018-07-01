@@ -10,6 +10,15 @@ import {Provider} from 'react-redux';
 import axios from 'axios';
 import logger from 'redux-logger';
 
+// class Feedback {
+//     constructor(feelings, comprehension, support, comments) {
+//         this.feelings = feelings,
+//         this.comprehension = comprehension,
+//         this.support = support,
+//         this.comments = comments
+//     }
+// }
+
 const feedback = (state = {}, action) => {
     if (action.type === 'FEELINGS_SUBMIT') {
         state.feelings = action.payload;

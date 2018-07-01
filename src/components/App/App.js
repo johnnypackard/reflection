@@ -7,6 +7,7 @@ import Comprehension from '../ComprehensionPage2/ComprehensionPage';
 import Support from '../SupportPage3/SupportPage';
 import Comments from '../CommentsPage4/CommentsPage';
 import NewSurvey from '../NewSurveyPage5/NewSurveyPage';
+import Admin from '../AdminPage/AdminPage';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path="/support" component={Support} />
             <Route exact path="/comments" component={Comments} />
             <Route exact path="/thankyou" component={NewSurvey} />
+            <Route exact path="/admin" component={Admin} />
           </div>
         </Router>
       </div>
