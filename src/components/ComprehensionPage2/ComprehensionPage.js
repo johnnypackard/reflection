@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import FeedbackInput from '../FeedbackInput/FeedbackInput';
 import SubmitAndNextButton from '../Buttons/SubmitAndNextButton';
 
-const mapReduxToProps = (reduxStore) =>({
-    reduxStore
-})
+// const mapReduxToProps = (reduxStore) =>({
+//     reduxStore
+// })
 class Comprehension extends Component {
     constructor(props) {
         super(props);
@@ -31,4 +31,4 @@ class Comprehension extends Component {
     }
 }
 
-export default connect(mapReduxToProps)(Comprehension);
+export default connect()(Comprehension);

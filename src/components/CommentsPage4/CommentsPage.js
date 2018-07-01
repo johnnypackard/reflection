@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import FeedbackInput from '../FeedbackInput/FeedbackInput';
-import SubmitAndNextButton from '../Buttons/SubmitAndNextButton';
+import SubmitAndFinishButton from '../Buttons/SubmitAndFinishButton';
 
-const mapReduxToProps = (reduxStore) =>({
-    reduxStore
-})
+// const mapReduxToProps = (reduxStore) =>({
+//     reduxStore
+// })
 class Comments extends Component {
     constructor(props) {
         super(props);
@@ -23,12 +23,12 @@ class Comments extends Component {
     render() {
         return (
             <div>
-                <h3>How well are you understanding the content?</h3>
-                <FeedbackInput value={this.state.comments} handleChange={this.handleChange} type="number" />
-                <SubmitAndNextButton history={this.props.history} actionType="COMMENTS_SUBMIT_SEND" value={this.state.comments} />
+                <h3>Any comments you would like to leave?</h3>
+                <FeedbackInput value={this.state.comments} handleChange={this.handleChange} type="text" />
+                <SubmitAndFinishButton history={this.props.history} actionType="COMMENTS_SUBMIT_SEND" value={this.state.comments} />
             </div>
         )
     }
 }
 
-export default connect(mapReduxToProps)(Comments);
+export default connect()(Comments);

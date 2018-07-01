@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import SubmitAndNextButton from '../Buttons/SubmitAndNextButton';
 import FeedbackInput from '../FeedbackInput/FeedbackInput';
 
-mapReduxToProps = (reduxStore) => ({
-    reduxStore
-});
+// mapReduxToProps = (reduxStore) => ({
+//     reduxStore
+// });
 class Feelings extends Component {
     constructor(props) {
         super(props);
@@ -31,4 +31,4 @@ class Feelings extends Component {
     }
 }
 
-export default connect(mapReduxToProps)(Feelings);
+export default connect()(Feelings);

@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import FeedbackInput from '../FeedbackInput/FeedbackInput';
 import SubmitAndNextButton from '../Buttons/SubmitAndNextButton';
 
-const mapReduxToProps = (reduxStore) =>({
-    reduxStore
-})
+// const mapReduxToProps = (reduxStore) =>({
+//     reduxStore
+// })
 class Support extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +23,7 @@ class Support extends Component {
     render() {
         return (
             <div>
-                <h3>How well are you understanding the content?</h3>
+                <h3>How well are you being supported?</h3>
                 <FeedbackInput value={this.state.support} handleChange={this.handleChange} type="number" />
                 <SubmitAndNextButton history={this.props.history} actionType="SUPPORT_SUBMIT" value={this.state.support} />
             </div>
@@ -31,4 +31,4 @@ class Support extends Component {
     }
 }
 
-export default connect(mapReduxToProps)(Support);
+export default connect()(Support);
