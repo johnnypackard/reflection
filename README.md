@@ -6,7 +6,7 @@ Reflection is a simple app which allows users to submit feedback to an admin.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+## Prerequisites
 
 What things you need to install the software and how to install them
 
@@ -42,7 +42,7 @@ Using Postico, create a new database by running the queries provided
 Have fun!
 
 ## Deployment
-# Heroku Prerequisite (one time)
+### Heroku Prerequisite (one time)
 
 1. Sign up for an account on [Heroku.com](https://www.heroku.com/)
 2. Install Heroku CLI by typing `brew install heroku` in Terminal
@@ -50,7 +50,7 @@ Have fun!
 
   > Note: Your project also needs to have a git repository.
 
-# Heroku Setup
+### Heroku Setup
 
 Run the following commands from within your project folder.
 
@@ -78,14 +78,14 @@ Lastly, open terminal and type `heroku open` as a shortcut to open your website 
 
    > Note: It is best to fully test your code locally before deploying to Heroku. Bugs are much harder to troubleshoot on a live website.
 
-# Miscellaneous
+### Miscellaneous
 
 - `heroku logs` - Display error logs
 - `heroku config` - Show basic app info
 - `heroku restart` - Sometimes it helps to turn things off an on again
 - `heroku open` - Opens the website for you project in the browser
 
-# Resources
+### Resources
 
 More detailed instructions can be found here: 
 
