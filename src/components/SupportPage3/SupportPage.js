@@ -3,9 +3,7 @@ import {connect} from 'react-redux';
 import FeedbackInput from '../FeedbackInput/FeedbackInput';
 import SubmitAndNextButton from '../Buttons/SubmitAndNextButton';
 
-// const mapReduxToProps = (reduxStore) =>({
-//     reduxStore
-// })
+// This page serves as the Support Page, which is also Page 3 of 5 for customer view
 class Support extends Component {
     constructor(props) {
         super(props);

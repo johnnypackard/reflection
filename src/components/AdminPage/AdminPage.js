@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import AdminFeedback from './AdminFeedback';
 
+// The Admin Page allows admins to view and delete
+// any and all feedback which has been input by the user
+
 class Admin extends Component {
     constructor (props) {
         super (props);

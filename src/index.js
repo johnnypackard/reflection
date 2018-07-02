@@ -10,15 +10,6 @@ import {Provider} from 'react-redux';
 import axios from 'axios';
 import logger from 'redux-logger';
 
-// class Feedback {
-//     constructor(feelings, comprehension, support, comments) {
-//         this.feelings = feelings,
-//         this.comprehension = comprehension,
-//         this.support = support,
-//         this.comments = comments
-//     }
-// }
-
 const postFeedback = (feedback) => {
     axios.post('/api/feedback', feedback)
         .then((response) => {
@@ -27,8 +18,10 @@ const postFeedback = (feedback) => {
         .catch((error) => {
             alert(`There's a problem with your post`);
         })
-}
+} // end axios post for feedback
 
+// declare feedback as a redux reducer
+// add if/else if statements for each action.type
 const feedback = (state = {}, action) => {
     if (action.type === 'FEELINGS_SUBMIT') {
         state.feelings = action.payload;
@@ -42,14 +35,15 @@ const feedback = (state = {}, action) => {
         state = {};
     }
     return state;
-}
+} // end feedback declaration
 
+// create the redux store and apply middleware
 const store = createStore(
     combineReducers({
         feedback
     }),
     applyMiddleware(logger),
-)
+) // end reduxStore creation, combining reducers, and middleware
 
 
 

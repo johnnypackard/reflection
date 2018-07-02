@@ -3,9 +3,8 @@ import {connect} from 'react-redux';
 import SubmitAndNextButton from '../Buttons/SubmitAndNextButton';
 import FeedbackInput from '../FeedbackInput/FeedbackInput';
 
-// mapReduxToProps = (reduxStore) => ({
-//     reduxStore
-// });
+// This page serves as the Feeling Page, which is also Page 1 of 5 for customer view
+
 class Feelings extends Component {
     constructor(props) {
         super(props);

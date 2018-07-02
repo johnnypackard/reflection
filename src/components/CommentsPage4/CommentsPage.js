@@ -3,9 +3,8 @@ import {connect} from 'react-redux';
 import FeedbackInput from '../FeedbackInput/FeedbackInput';
 import SubmitAndFinishButton from '../Buttons/SubmitAndFinishButton';
 
-// const mapReduxToProps = (reduxStore) =>({
-//     reduxStore
-// })
+// This page serves as the Comments Page for additional comments, which is also Page 4 of 5 for customer view
+
 class Comments extends Component {
     constructor(props) {
         super(props);
