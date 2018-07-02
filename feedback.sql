@@ -1,3 +1,5 @@
+CREATE DATABASE "feedback";
+
 CREATE TABLE "feedback" (
 "id" serial primary key,
 "feelings" INTEGER not null,
