@@ -1,7 +1,9 @@
 {
   "name": "react-reflection-board",
   "version": "0.1.0",
-  "private": true,
+  "author": "Johnny Packard",
+  "license": "MIT",
+  "private": false,
   "proxy": "http://localhost:5000",
   "dependencies": {
     "axios": "^0.17.1",
