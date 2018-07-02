@@ -19,6 +19,16 @@ import logger from 'redux-logger';
 //     }
 // }
 
+const postFeedback = (feedback) => {
+    axios.post('/api/feedback', feedback)
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            alert(`There's a problem with your post`);
+        })
+}
+
 const feedback = (state = {}, action) => {
     if (action.type === 'FEELINGS_SUBMIT') {
         state.feelings = action.payload;
@@ -40,16 +50,6 @@ const store = createStore(
     }),
     applyMiddleware(logger),
 )
-
-const postFeedback = (feedback) => {
-    axios.post('/api/feedback', feedback)
-        .then((response) => {
-            console.log(response);
-        })
-        .catch((error) => {
-            alert(`There's a problem with your post`);
-        })
-}
 
 
 

@@ -5,10 +5,9 @@ CREATE TABLE "feedback" (
 "feelings" INTEGER not null,
 "comprehension" INTEGER not null,
 "support" INTEGER not null,
-"comments" text,
-"date" date not null default CURRENT_TIMESTAMP
+"comments" text
 );
 
 -- example
-INSERT INTO "feedback" ("feelings", "comprehension", "support", "comments", "date")
-VALUES (5, 5, 5, 'I love this assignment!', '06/30/2018');
+INSERT INTO "feedback" ("feelings", "comprehension", "support", "comments")
+VALUES (5, 5, 5, 'I love this assignment!');
